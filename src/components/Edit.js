@@ -42,7 +42,7 @@ const Edit = () => {
 
     const getdata = async () => {
 
-        const res = await  fetch (`http://localhost:8083/getstud/${id}`, {
+        const res = await  fetch (process.env.REACT_APP_API_URL+`/getstud/${id}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -72,7 +72,7 @@ const Edit = () => {
 
        const {name,department,email,mobile,address}= inpval;
 
-        const res2 = await fetch(`http://localhost:8083/updatestud/${id}`,{
+        const res2 = await fetch(process.env.REACT_APP_API_URL+`/updatestud/${id}`,{
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json"
