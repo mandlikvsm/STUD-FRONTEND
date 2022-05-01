@@ -121,7 +121,7 @@ return (
         <Th>Department</Th>
 		 <Th>Email</Th>
         <Th isNumeric>Mobile</Th>
-		 <Th>Address</Th>
+		 <Th>City</Th>
 		 <Th>Action</Th>
       </Tr>
     </Thead>
