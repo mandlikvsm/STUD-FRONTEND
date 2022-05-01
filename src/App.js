@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Navbar from "./components/Navbar";
+import StudentList from "./components/StudentList";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//import { Box,VStack } from '@chakra-ui/react';
+//import RouteDemo from "./components/RouteDemo";
+
+import StudentRegister from "./components/StudentRegister";
+import Edit from "./components/Edit";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  
+  
+     <>
+      
+	
+	 <Router>
+        
+        <Routes>
+          <Route exact path = '/' element={< Navbar />}></Route>
+          <Route exact path = '/studentregister' element={< StudentRegister />} ></Route>
+		  <Route exact path = '/edit/:id' element = {<Edit />} ></Route>
+
+          <Route exact path='/studentlist' element={<StudentList />}></Route>
+
+
+        </Routes>
+      
+    </Router>
+     
+   
+	</>
   );
 }
 
 export default App;
+
+/*
+	
+	*/
