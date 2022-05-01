@@ -40,7 +40,7 @@ export default function StudentList() {
 	const getdata = async (e) => {
 		
 
-        const res = await fetch("http://localhost:8083/getdata", {
+        const res = await fetch(process.env.REACT_APP_API_URL +"/getdata", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json"
@@ -68,7 +68,7 @@ export default function StudentList() {
 
     const deletedstud = async (id) => {
 
-        const res2 = await fetch(`http://localhost:8083/deletestud/${id}`, {
+        const res2 = await fetch(process.env.REACT_APP_API_URL+`/deletestud/${id}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"

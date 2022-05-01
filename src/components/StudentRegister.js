@@ -7,6 +7,8 @@ import { Box, FormErrorMessage,InputGroup,Button,InputLeftAddon,Flex,Spacer,VSta
 
 function StudentRegister () {
 	
+	console.log("hello env file");
+	console.log(process.env.REACT_APP_API_URL);
 	// eslint-disable-next-line
 	const {studdata, setStuddata } = useContext(adddata);
 	const navigate = useNavigate();
@@ -49,7 +51,7 @@ function StudentRegister () {
 	const {name,department,email,mobile,address}= inpval;
 	console.log(inpval.name);
 	
-	const res = await fetch ("http://localhost:8083/studentregister", {
+	const res = await fetch (process.env.REACT_APP_API_URL+"/studentregister", {
 		method: "POST",
 		headers: {
 			"Content-Type":"application/json"
